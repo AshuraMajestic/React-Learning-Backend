@@ -4,7 +4,7 @@ require('./db/conn');
 const User = require('./db/user');
 const Product = require('./db/product');
 const app = express();
-const port = 5000;
+const port = process.env.port || 5000;
 const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
 const jwtKey = 'OnePiece';
@@ -141,5 +141,5 @@ function tokenAuthorization(req, res, next) {
 
 // Start the server
 app.listen(port, () => {
-    console.log("Listening");
+    console.log("Listening on port " + port);
 });
