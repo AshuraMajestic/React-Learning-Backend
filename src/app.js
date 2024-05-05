@@ -4,10 +4,11 @@ require('./db/conn');
 const User = require('./db/user');
 const Product = require('./db/product');
 const app = express();
-const port = process.env.port || 5000;
+const port = process.env.PORT || 5000;
 const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
 const jwtKey = 'OnePiece';
+
 
 // Set up CORS
 app.use(cors());
